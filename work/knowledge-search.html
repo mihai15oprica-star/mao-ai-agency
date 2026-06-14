@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Knowledge Search — MAO Case Study</title>
+<meta name="description" content="How MAO built semantic search over millions of documents with grounded, cited answers — serving 3.4M queries a month.">
+<meta name="theme-color" content="#070708">
+<link rel="icon" type="image/png" href="../assets/mao-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/case.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="cursor" aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+<div id="progress" aria-hidden="true"></div>
+
+<nav aria-label="Primary">
+  <a class="nav-logo" href="../index.html" aria-label="MAO home"><img src="../assets/mao-logo.png" alt=""></a>
+  <span class="nav-spacer"></span>
+  <a class="nav-back" href="../index.html#work"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>All work</a>
+  <button class="nav-cta" onclick="location.href='../index.html#cta'">Start a project</button>
+</nav>
+
+<main id="main">
+  <header class="case-hero">
+    <canvas id="case-fx" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <a class="crumb" href="../index.html#work"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Case study</a>
+      <span class="case-tag">RAG SEARCH</span>
+      <h1 class="case-h1">A search brain for a <span class="grad">knowledge platform.</span></h1>
+      <p class="case-sum">Keyword search was failing users on a platform with millions of documents. We built semantic search with grounded, cited answers — so people find the truth fast and trust what they read.</p>
+      <div class="case-meta">
+        <div><div class="k">Client</div><div class="v">Knowledge startup</div></div>
+        <div><div class="k">Industry</div><div class="v">Information services</div></div>
+        <div><div class="k">Timeline</div><div class="v">11 weeks</div></div>
+        <div><div class="k">Our role</div><div class="v">Architecture · Retrieval · Eng</div></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="metric-band" aria-label="Outcomes">
+    <div class="wrap">
+      <div class="metric"><div class="num">3.4M</div><div class="cap">Queries per month</div></div>
+      <div class="metric"><div class="num">2.1×</div><div class="cap">Search-to-answer success</div></div>
+      <div class="metric"><div class="num">&lt;400ms</div><div class="cap">Median response time</div></div>
+    </div>
+  </section>
+
+  <div class="case-body">
+    <section class="case-section">
+      <span class="label">THE CHALLENGE</span>
+      <h2>A library nobody could navigate</h2>
+      <p>The platform held millions of documents, but its keyword search couldn't keep up. Users searched in plain language and got back pages of near-misses; the right answer existed but stayed buried. <strong>Search abandonment was the company's top churn driver.</strong></p>
+      <p>They didn't just want better ranking — they wanted direct answers users could trust, without sacrificing the credibility of citing real sources.</p>
+    </section>
+
+    <section class="case-section">
+      <span class="label">THE APPROACH</span>
+      <h2>Retrieval you can trust, at scale</h2>
+      <p>We built a retrieval-augmented system where <strong>every answer is assembled from real, cited passages</strong> — never invented. Hybrid retrieval combines semantic and keyword signals so the system handles both fuzzy questions and exact terminology.</p>
+      <p>At millions of documents and millions of queries, quality and latency are in constant tension. We treated both as first-class metrics, tuning the index and reranking until grounded answers came back in under half a second.</p>
+    </section>
+
+    <section class="case-section">
+      <span class="label">WHAT WE BUILT</span>
+      <h2>The system</h2>
+      <ul class="feature-list">
+        <li>An embeddings + hybrid retrieval pipeline over millions of chunked, deduplicated documents.</li>
+        <li>A reranking stage that pushes the most relevant passages to the top before generation.</li>
+        <li>Grounded answer synthesis with inline citations linking back to the source.</li>
+        <li>An incremental indexing system that keeps results fresh as new content lands, with no full re-index.</li>
+        <li>A retrieval eval harness scoring relevance and groundedness on a labelled query set.</li>
+      </ul>
+    </section>
+
+    <div class="pullquote">
+      <p>"Search went from our biggest complaint to our most-loved feature. People tell us it finally 'just knows what they mean' — and they can click through to verify every claim."</p>
+      <div class="by">— Founder &amp; CEO</div>
+    </div>
+
+    <section class="case-section">
+      <span class="label">THE RESULTS</span>
+      <h2>Answers, not ten blue links</h2>
+      <p>The system now serves around <strong>3.4 million queries a month</strong> with a median response under 400ms. Search-to-answer success — the share of searches that end in the user finding what they needed — more than doubled.</p>
+      <p>Because every answer cites its sources, trust went up alongside speed: users get a direct response and can verify it in one click.</p>
+    </section>
+
+    <section class="case-section">
+      <span class="label">THE TOOLKIT</span>
+      <h2>Built with</h2>
+      <div class="tech-chips"><span>Claude</span><span>OpenAI</span><span>Pinecone</span><span>pgvector</span><span>Python</span><span>TypeScript</span><span>Kubernetes</span></div>
+    </section>
+
+    <nav class="case-next" aria-label="More work">
+      <span class="nx-k">NEXT CASE STUDY</span>
+      <a href="internal-copilot.html">An internal copilot for an ops team <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </nav>
+  </div>
+</main>
+
+<section class="cta-strip">
+  <div class="in">
+    <h2>Sitting on data <span class="grad">nobody can find?</span></h2>
+    <p>If your search is failing your users, retrieval done right changes everything. Let's talk about your corpus.</p>
+    <div class="cta-btns">
+      <button class="btn btn-primary" onclick="location.href='../index.html#cta'">Start a project</button>
+      <button class="btn btn-ghost" onclick="location.href='../index.html#work'">See more work</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a class="l" href="../index.html" aria-label="MAO home"><img src="../assets/mao-logo.png" alt="MAO"></a>
+  <div class="r">
+    <a href="../index.html#services">Services</a>
+    <a href="../index.html#work">Work</a>
+    <a href="mailto:hello@mao-webs.com">Contact</a>
+    <span>© <span data-year>2026</span> MAO</span>
+  </div>
+</footer>
+
+<script src="../assets/case.js"></script>
+</body>
+</html>

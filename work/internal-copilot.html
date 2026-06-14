@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Internal Copilot — MAO Case Study</title>
+<meta name="description" content="How MAO built a custom internal copilot wired into an ops team's tools and data — giving a 12-person team the output of a much larger one.">
+<meta name="theme-color" content="#070708">
+<link rel="icon" type="image/png" href="../assets/mao-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/case.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="cursor" aria-hidden="true"></div>
+<div id="cursor-ring" aria-hidden="true"></div>
+<div id="progress" aria-hidden="true"></div>
+
+<nav aria-label="Primary">
+  <a class="nav-logo" href="../index.html" aria-label="MAO home"><img src="../assets/mao-logo.png" alt=""></a>
+  <span class="nav-spacer"></span>
+  <a class="nav-back" href="../index.html#work"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>All work</a>
+  <button class="nav-cta" onclick="location.href='../index.html#cta'">Start a project</button>
+</nav>
+
+<main id="main">
+  <header class="case-hero">
+    <canvas id="case-fx" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <a class="crumb" href="../index.html#work"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>Case study</a>
+      <span class="case-tag">INTERNAL TOOLING</span>
+      <h1 class="case-h1">An internal copilot for <span class="grad">an ops team.</span></h1>
+      <p class="case-sum">A 12-person operations team was capped by manual work. We built a custom assistant wired into their tools and data that drafts, summarizes, and automates the busywork — giving a small team the throughput of a much larger one.</p>
+      <div class="case-meta">
+        <div><div class="k">Client</div><div class="v">Scale-up operations team</div></div>
+        <div><div class="k">Industry</div><div class="v">Logistics &amp; ops</div></div>
+        <div><div class="k">Timeline</div><div class="v">8 weeks</div></div>
+        <div><div class="k">Our role</div><div class="v">Product · Eng · Integrations</div></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="metric-band" aria-label="Outcomes">
+    <div class="wrap">
+      <div class="metric"><div class="num">5×</div><div class="cap">Effective team output</div></div>
+      <div class="metric"><div class="num">22 hrs</div><div class="cap">Saved per person / week</div></div>
+      <div class="metric"><div class="num">14</div><div class="cap">Tools connected</div></div>
+    </div>
+  </section>
+
+  <div class="case-body">
+    <section class="case-section">
+      <span class="label">THE CHALLENGE</span>
+      <h2>A great team stuck doing low-value work</h2>
+      <p>The operations team were the glue of the business — but most of their day went to mechanical work: stitching together data from a dozen tools, writing the same status updates, chasing information across systems that didn't talk to each other.</p>
+      <p>They didn't need more headcount. <strong>They needed their existing people freed from the busywork</strong> so they could do the judgement-heavy work only humans can.</p>
+    </section>
+
+    <section class="case-section">
+      <span class="label">THE APPROACH</span>
+      <h2>A copilot that lives in their stack</h2>
+      <p>Generic chatbots don't know your business. So we built an assistant <strong>wired directly into the team's real tools and data</strong> — their CRM, ticketing, spreadsheets, and internal databases — with permissioned, auditable access.</p>
+      <p>We co-designed it with the team, automating the specific workflows they hated most rather than guessing. Every action it takes is logged and reversible, so trust was earned from day one.</p>
+    </section>
+
+    <section class="case-section">
+      <span class="label">WHAT WE BUILT</span>
+      <h2>The system</h2>
+      <ul class="feature-list">
+        <li>A copilot connected to 14 internal tools through a permissioned, auditable integration layer.</li>
+        <li>Workflow automations for the team's highest-frequency tasks — status reports, data pulls, handoffs.</li>
+        <li>Natural-language access to data spread across systems, with answers grounded in live records.</li>
+        <li>Action logging and approvals so every automated step is traceable and reversible.</li>
+        <li>A feedback loop that turns the team's corrections into better behaviour over time.</li>
+      </ul>
+    </section>
+
+    <div class="pullquote">
+      <p>"It's like we hired five people who never get tired of the boring stuff. The team finally spends its time on the work that actually moves the needle."</p>
+      <div class="by">— Director of Operations</div>
+    </div>
+
+    <section class="case-section">
+      <span class="label">THE RESULTS</span>
+      <h2>Same team, five times the reach</h2>
+      <p>The copilot saved roughly <strong>22 hours per person each week</strong> and lifted the team's effective output around fivefold — without a single new hire. Work that used to slip through the cracks now gets done consistently.</p>
+      <p>Most importantly, the people stayed: morale rose as the team stopped doing work they dreaded and started doing work they were hired for.</p>
+    </section>
+
+    <section class="case-section">
+      <span class="label">THE TOOLKIT</span>
+      <h2>Built with</h2>
+      <div class="tech-chips"><span>Claude</span><span>TypeScript</span><span>Next.js</span><span>Python</span><span>PostgreSQL</span><span>Vercel</span><span>Docker</span></div>
+    </section>
+
+    <nav class="case-next" aria-label="More work">
+      <span class="nx-k">NEXT CASE STUDY</span>
+      <a href="support-copilot.html">An AI agent that closes support tickets <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </nav>
+  </div>
+</main>
+
+<section class="cta-strip">
+  <div class="in">
+    <h2>Your team is better than <span class="grad">its busywork.</span></h2>
+    <p>If your people spend their days stitching tools together, a copilot can give you that time back. Let's find the workflows worth automating.</p>
+    <div class="cta-btns">
+      <button class="btn btn-primary" onclick="location.href='../index.html#cta'">Start a project</button>
+      <button class="btn btn-ghost" onclick="location.href='../index.html#work'">See more work</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a class="l" href="../index.html" aria-label="MAO home"><img src="../assets/mao-logo.png" alt="MAO"></a>
+  <div class="r">
+    <a href="../index.html#services">Services</a>
+    <a href="../index.html#work">Work</a>
+    <a href="mailto:hello@mao-webs.com">Contact</a>
+    <span>© <span data-year>2026</span> MAO</span>
+  </div>
+</footer>
+
+<script src="../assets/case.js"></script>
+</body>
+</html>

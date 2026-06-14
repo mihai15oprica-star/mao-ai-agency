@@ -24,7 +24,7 @@
 :root {
   --bg:#070708; --bg2:#0c0c0f; --panel:#121217; --panel-2:#16161c;
   --line:rgba(255,255,255,0.08); --line-2:rgba(255,255,255,0.14);
-  --white:#f5f5f7; --muted:#9b9ba6; --dim:#6c6c78;
+  --white:#f5f5f7; --muted:#9b9ba6; --dim:#8a8a96;
   --red:#ff2436; --red-bright:#ff5a48; --crimson:#c2001a; --maroon:#7a0012;
   --grad-red:linear-gradient(135deg,#ff6a4d 0%,#ff2436 42%,#a3001a 100%);
   --grad-text:linear-gradient(120deg,#ffffff 0%,#ffb3ad 45%,#ff2436 100%);
@@ -179,9 +179,14 @@ section{ padding:140px 6vw; position:relative; }
 .work-card-body{ position:relative; z-index:2; }
 .work-card h3{ font-family:'Space Grotesk',sans-serif; font-weight:600; font-size:26px; letter-spacing:-.015em; margin-bottom:12px; }
 .work-card p{ font-size:14.5px; color:var(--muted); line-height:1.7; max-width:440px; }
-.work-arrow{ display:inline-flex; align-items:center; gap:8px; margin-top:22px; font-family:'Space Mono',monospace; font-size:12px; color:var(--white); transition:gap .3s; }
-.work-card:hover .work-arrow{ gap:14px; }
+.work-arrow{ display:inline-flex; align-items:center; gap:8px; margin-top:22px; font-family:'Space Mono',monospace; font-size:12px; color:var(--white); transition:gap .3s,color .3s; }
+.work-card:hover .work-arrow{ gap:14px; color:var(--red-bright); }
 .work-arrow svg{ width:16px; height:16px; stroke:var(--red); stroke-width:2; fill:none; }
+/* whole card clickable via stretched link */
+.work-card a.work-arrow::after{ content:''; position:absolute; inset:0; z-index:3; }
+.work-card a.work-arrow:focus-visible{ outline:none; }
+.work-card:has(a.work-arrow:focus-visible){ outline:2px solid var(--red-bright); outline-offset:3px; border-color:rgba(255,36,54,.55); }
+.work-card:focus-within{ border-color:rgba(255,36,54,.5); }
 
 /* ── Stats / why ── */
 #why{ background:var(--bg2); }
@@ -462,7 +467,7 @@ footer{ background:var(--bg); border-top:1px solid var(--line); padding:72px 6vw
     <p class="lede">A few of the products we've shipped. Different industries, same standard — measurable impact in production.</p>
   </div>
   <div class="work-grid">
-    <article class="work-card" tabindex="0">
+    <article class="work-card">
       <div class="glow"></div>
       <div class="work-card-top">
         <span class="work-tag">SUPPORT COPILOT</span>
@@ -471,10 +476,10 @@ footer{ background:var(--bg); border-top:1px solid var(--line); padding:72px 6vw
       <div class="work-card-body">
         <h3>An AI agent that closes support tickets</h3>
         <p>A retrieval-grounded agent for a B2B SaaS that drafts replies, pulls the right docs, and resolves routine tickets end to end — escalating only what truly needs a human.</p>
-        <span class="work-arrow">Read case study <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <a class="work-arrow" href="work/support-copilot.html" aria-label="Read case study: An AI agent that closes support tickets">Read case study <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </article>
-    <article class="work-card alt" tabindex="0">
+    <article class="work-card alt">
       <div class="glow"></div>
       <div class="work-card-top">
         <span class="work-tag">DOC AUTOMATION</span>
@@ -483,10 +488,10 @@ footer{ background:var(--bg); border-top:1px solid var(--line); padding:72px 6vw
       <div class="work-card-body">
         <h3>Document intelligence for fintech</h3>
         <p>An extraction pipeline that reads contracts and statements, structures the data, and flags risk — turning a three-day manual review into minutes.</p>
-        <span class="work-arrow">Read case study <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <a class="work-arrow" href="work/document-intelligence.html" aria-label="Read case study: Document intelligence for fintech">Read case study <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </article>
-    <article class="work-card alt" tabindex="0">
+    <article class="work-card alt">
       <div class="glow"></div>
       <div class="work-card-top">
         <span class="work-tag">RAG SEARCH</span>
@@ -495,10 +500,10 @@ footer{ background:var(--bg); border-top:1px solid var(--line); padding:72px 6vw
       <div class="work-card-body">
         <h3>A search brain for a knowledge platform</h3>
         <p>Semantic search over millions of documents with grounded, cited answers — so users find the truth fast and trust what they read.</p>
-        <span class="work-arrow">Read case study <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <a class="work-arrow" href="work/knowledge-search.html" aria-label="Read case study: A search brain for a knowledge platform">Read case study <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </article>
-    <article class="work-card" tabindex="0">
+    <article class="work-card">
       <div class="glow"></div>
       <div class="work-card-top">
         <span class="work-tag">INTERNAL TOOLING</span>
@@ -507,7 +512,7 @@ footer{ background:var(--bg); border-top:1px solid var(--line); padding:72px 6vw
       <div class="work-card-body">
         <h3>An internal copilot for an ops team</h3>
         <p>A custom assistant wired into their tools and data that drafts, summarizes, and automates the busywork — giving a 12-person team the throughput of a much larger one.</p>
-        <span class="work-arrow">Read case study <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <a class="work-arrow" href="work/internal-copilot.html" aria-label="Read case study: An internal copilot for an ops team">Read case study <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </article>
   </div>
